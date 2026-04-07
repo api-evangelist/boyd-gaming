@@ -1,7 +1,11 @@
 aid: boyd-gaming
-url: https://raw.githubusercontent.com/api-evangelist/boyd-gaming/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/boyd-gaming/refs/heads/main/apis.yml
 modified: '2026-03-23'
 apis: []
 common:
   - type: Website
     url: https://www.boyd-gaming.com
+description: >-
+  Boyd Gaming is a multi-jurisdictional gaming company that owns and operates casino
+  entertainment properties across the United States.
