@@ -22,6 +22,8 @@ description: >-
   all properties, accessible via web portal and mobile app.
 apis: []
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/boyd-gaming
   - type: Website
     url: https://www.boydgaming.com
   - type: LoyaltyProgram
