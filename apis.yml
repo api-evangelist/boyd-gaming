@@ -23,6 +23,8 @@ description: >-
   all properties, accessible via web portal and mobile app.
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/boyd-gaming-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/boyd-gaming
   - type: Website
