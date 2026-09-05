@@ -1,0 +1,283 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTPS probes of every host in apis.yml plus the Boyd Interactive / Stardust brand hosts
+summary: No .well-known document of any kind was retrieved from any Boyd Gaming host. Every HTTP 200 observed
+  was an HTML catch-all (Sitecore SXA on rewards.boydgaming.com, the investor-relations template on investors/media)
+  and is recorded as a miss. The four Imperva-fronted hosts answer 403 to the entire /.well-known/* path
+  class, so presence there is undetermined rather than disproven. No WellKnown or SecurityTxt pointer
+  is emitted.
+hosts:
+- host: www.boydgaming.com
+  note: Imperva WAF answers 403 with a challenge page for every /.well-known/* path (GET and HEAD alike).
+    Presence undetermined, not confirmed absent.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/openid-configuration
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+- host: boydgaming.com
+  note: Imperva WAF answers 403 with a challenge page for every /.well-known/* path. Presence undetermined,
+    not confirmed absent.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/openid-configuration
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+- host: rewards.boydgaming.com
+  note: Sitecore SXA catch-all returns HTTP 200 with the site HTML shell for /.well-known/openid-configuration,
+    /.well-known/oauth-authorization-server and /.well-known/api-catalog. These are FALSE POSITIVES, not
+    documents - the body is the rewards homepage layout, not JSON. Scored as misses.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+    file: null
+    note: no document
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html; charset=utf-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html; charset=utf-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html; charset=utf-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+    file: null
+    note: no document
+- host: sports.boydgaming.com
+  note: Imperva WAF answers 403 with a challenge page for every /.well-known/* path. Presence undetermined,
+    not confirmed absent.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/openid-configuration
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+- host: investors.boydgaming.com
+  note: Third-party investor-relations platform. Clean 404s on the well-known paths; the same host answers
+    200 with an HTML shell for /openapi.json and /llms.txt, likewise catch-all false positives.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+- host: media.boydgaming.com
+  note: Same third-party investor-relations / newsroom platform as investors.boydgaming.com. 404 on the
+    well-known paths; soft-200 HTML shell on /openapi.json and /llms.txt.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: no document
+- host: careers.boydgaming.com
+  note: Imperva WAF answers 403 with a challenge page for every /.well-known/* path. Presence undetermined,
+    not confirmed absent.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/openid-configuration
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    content_type: text/html
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+- host: www.stardustsocialcasino.com
+  note: Stardust Social Casino (Boyd Interactive brand). 404 status with a full HTML error page body.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+- host: boydinteractive.com
+  note: Boyd Interactive, Boyd Gaming digital gaming division. 404 status with a full HTML error page
+    body.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html; charset=UTF-8
+    file: null
+    note: HTML shell / WAF challenge body - not a document
+also_probed:
+  note: A2A agent-card discovery (STEP 0b.4) and REST/llms.txt discovery were run over the same host set.
+  paths:
+  - /.well-known/agent-card.json
+  - /.well-known/agent.json
+  - /openapi.json
+  - /llms.txt
+  - /swagger.json
+  - /api-docs
+  result: No hit. www.boydgaming.com, boydgaming.com, sports and careers 403 (WAF); rewards.boydgaming.com
+    404; investors.boydgaming.com and media.boydgaming.com returned HTTP 200 HTML shells for /openapi.json
+    and /llms.txt from the IR-platform catch-all and are rejected as false positives; stardustsocialcasino.com
+    and boydinteractive.com 404. No agent card, therefore no a2a/ artifact and no AgentCard pointer.
