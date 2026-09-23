@@ -1,7 +1,9 @@
 ---
 title: City of Boyd | Boyd TX
 url: https://www.cityofboyd.com/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Boyd Gaming" press release artificial intelligence'
 position: 3
 source: serpapi-google

@@ -1,7 +1,9 @@
 ---
 title: Matthew Boyd Stats, Height, Weight, Position, Rookie ...
 url: https://www.baseball-reference.com/players/b/boydma01.shtml
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Boyd Gaming" press release artificial intelligence'
 position: 4
 source: serpapi-google

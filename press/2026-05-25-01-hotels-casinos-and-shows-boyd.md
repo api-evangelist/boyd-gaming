@@ -1,7 +1,9 @@
 ---
 title: Hotels, Casinos, & Shows | Boyd
 url: https://www.boydgaming.com/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Boyd Gaming" press release artificial intelligence'
 position: 1
 source: serpapi-google
